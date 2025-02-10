@@ -1,7 +1,7 @@
 {
-  "name": "DeepSeek",
+  "name": "deepseek-vscode-ext",
   "displayName": "DeepSeek",
-  "description": "DeepSeek Assistant",
+  "description": "DeepSeek Assistant VS Code Extension",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.96.0"
@@ -26,6 +26,12 @@
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src",
     "test": "vscode-test"
+  },
+  "author": "Vaidik Vadhavana",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VaidikV/DeepSeek-VSCode-Extension"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
