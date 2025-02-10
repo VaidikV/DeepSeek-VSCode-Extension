@@ -2,6 +2,8 @@
 
 Welcome to the **DeepSeek VS Code Extension**! This extension integrates **DeepSeek R1**, a powerful AI assistant, directly into Visual Studio Code to help developers streamline their workflows. The best part? It runs entirely **locally** using **Ollama**, ensuring complete privacy and zero dependency on the internet.
 
+![Screenshot](example_dsvs.jpg)
+
 ---
 
 ## Features 🚀
