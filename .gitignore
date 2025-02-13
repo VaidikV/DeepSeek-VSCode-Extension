@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Build output
+out/
+
+# Packaged extension
+*.vsix
+
+# IDE settings
+.vscode/
