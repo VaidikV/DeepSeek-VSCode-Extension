@@ -1,159 +1,72 @@
-# DeepSeek VS Code Extension 🧠💻
+# OmniChat AI 🧠💻
 
-Welcome to the **DeepSeek VS Code Extension**! This extension integrates **DeepSeek R1**, a powerful AI assistant, directly into Visual Studio Code to help developers streamline their workflows. The best part? It runs entirely **locally** using **Ollama**, ensuring complete privacy and zero dependency on the internet.
+A privacy-first VS Code extension that integrates with any local LLM through Ollama. Chat with AI models directly in your editor without sending data to the cloud.
 
-![Screenshot](example_dsvs.jpg)
+![demo1](ss1.jpg)
+![demo2](ss2.jpg)
 
----
+- **Works with Any LLM**: Use DeepSeek, Gemma, Llama, or any other model available through Ollama
+- **Real-Time AI Interaction**: Get coding assistance, brainstorm ideas, and debug issues without leaving VS Code
+- **Privacy-First**: All processing happens locally - your code and data never leave your machine
+- **Beautifully Formatted Responses**: Clean markdown rendering for better readability
+- **Seamless Integration**: Matches VS Code's themes for a consistent experience
 
-## Features 🚀
-
-1. **Real-Time AI Interaction**  
-   Chat with DeepSeek directly from a webview in VS Code. Ask questions, get coding assistance, or brainstorm ideas—all without leaving your editor.
-
-2. **Dynamic Thinking Feedback**  
-   While DeepSeek processes your input, it provides real-time updates (e.g., "Thinking...") to keep you informed.
-
-3. **Beautifully Formatted Responses**  
-   Final responses are rendered using `marked.js`, ensuring clean and professional markdown formatting for better readability.
-
-4. **Privacy-First AI**  
-   All processing happens locally on your machine using Ollama, so your data never leaves your system.
-
-5. **Seamless Integration**  
-   Designed to match VS Code’s themes and UI for a consistent and polished experience.
-
----
-
-## Installation 🛠️
+## Installation
 
 ### Prerequisites
-- [Visual Studio Code](https://code.visualstudio.com/) installed on your system.
-- [Node.js](https://nodejs.org/) installed for development and packaging.
-- [Ollama](https://ollama.ai/) installed and configured locally for running the DeepSeek R1 model.
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Ollama](https://ollama.ai/) installed and running locally
 
-### Steps to Install
-1. Clone this repository:
+### Quick Install
+1. Install from VS Code Marketplace:
+   - Open VS Code
+   - Go to Extensions (Ctrl+Shift+X)
+   - Search for "OmniChat AI"
+   - Click Install
+
+2. Install your preferred LLM with Ollama:
    ```bash
-   git clone https://github.com/yourusername/deepseek-vscode-extension.git
-   cd deepseek-vscode-extension
+   ollama pull deepseek-r1:1.5b
+   # Or any other model you prefer
    ```
 
-2. Install dependencies:
+## Usage
+
+1. Start Ollama in your terminal:
    ```bash
-   npm install
+   ollama serve
    ```
 
-3. Compile the extension (if using TypeScript):
-   ```bash
-   npm run compile
-   ```
+2. In VS Code:
+   - Open Command Palette (Ctrl+Shift+P)
+   - Run `OmniChat: Start`
+   - A chat panel will open
 
-4. Package the extension:
-   ```bash
-   vsce package
-   ```
+3. Set your preferred model:
+   - Open Command Palette (Ctrl+Shift+P)
+   - Run `OmniChat: Set Model`
+   - Enter the model name (e.g., `deepseek-r1:1.5b`, `gemma:7b`, etc.)
 
-5. Install the `.vsix` file in VS Code:
-   - Open the Extensions view (`Ctrl+Shift+X` or `Cmd+Shift+X` on macOS).
-   - Click the `...` menu in the top-right corner and select **Install from VSIX...**.
-   - Choose the generated `.vsix` file.
+4. Start chatting!
+   - Type your question and click "Ask"
+   - Receive beautifully formatted responses
 
-6. Activate the extension:
-   - Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on macOS).
-   - Run `DeepSeek: Start`.
+## Models
 
----
+OmniChat AI works with any model available through Ollama. Some popular options:
 
-## Usage 💡
+- `deepseek-r1:1.5b` - Fast, lightweight coding assistant
+- `deepseek-r1:8b` - Good balance of speed and capability
+- `deepseek-r1:32b` - Most capable DeepSeek model
+- `gemma:7b` - Google's lightweight model
+- `llama3:8b` - Meta's efficient model
 
-1. Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`) and run `DeepSeek: Start`.
-2. A new webview panel will open with a chat interface.
-3. Type your question or prompt into the text area and click "Ask".
-4. While DeepSeek processes your input, you'll see a "Thinking..." message.
-5. Once processing is complete, you'll receive a beautifully formatted response.
+## Credits
 
----
+This project was inspired by [Fireship's video](https://www.youtube.com/@Fireship) on building VS Code extensions.
 
-## How It Works 🔍
+Special thanks to [Ollama](https://ollama.ai/) for enabling local AI capabilities.
 
-- The extension communicates with **Ollama**, which runs the DeepSeek R1 model locally.
-- User input is sent to DeepSeek, which processes it and streams back responses.
-- The extension dynamically handles `<think>` tags to display real-time feedback while processing.
-- Final responses are rendered using `marked.js` for clean markdown formatting.
+## License
 
----
-
-## Development Guide 🛠️
-
-### Running in Development Mode
-1. Clone the repository and install dependencies:
-   ```bash
-   git clone https://github.com/yourusername/deepseek-vscode-extension.git
-   cd deepseek-vscode-extension
-   npm install
-   ```
-
-2. Launch the extension in debug mode:
-   - Open the project in VS Code.
-   - Press `F5` to start debugging.
-   - A new VS Code window will open with the extension running.
-
-3. Modify code as needed, and use the debug console to view logs.
-
-### File Structure
-```
-├── src/
-│   ├── extension.ts        # Main entry point for the extension backend.
-│   ├── webview/            # Contains HTML, CSS, and JS for the webview interface.
-├── out/                    # Compiled JavaScript files (generated after build).
-├── package.json            # Extension metadata and dependencies.
-├── tsconfig.json           # TypeScript configuration file.
-├── README.md               # Project documentation.
-```
-
----
-
-## Roadmap 🗺️
-
-Planned features for future releases:
-- Support for additional AI models via Ollama.
-- Customizable interaction styles (e.g., themes, response formatting).
-- Publish on the Visual Studio Code Marketplace for easy installation.
-- Enhanced error handling and debugging tools.
-
----
-
-## Credits 🙌
-
-This project was inspired by [Fireship's video](https://www.youtube.com/@Fireship) on building VS Code extensions—thank you for providing such a great foundation!  
-
-Special thanks to [Ollama](https://ollama.ai/) for enabling local AI capabilities with their amazing tools.
-
----
-
-## Contributing 🤝
-
-Contributions are welcome! If you’d like to contribute:
-1. Fork this repository.
-2. Create a new branch for your feature or bug fix:  
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes and push them:  
-   ```bash
-   git push origin feature-name
-   ```
-4. Open a pull request describing your changes.
-
----
-
-## License 📜
-
-This project is licensed under the MIT License—feel free to use it as you see fit!
-
----
-
-## Contact 📬
-
-If you have any questions or suggestions, feel free to reach out or open an issue on GitHub!
+This project is licensed under the MIT License.

@@ -1,9 +1,10 @@
 {
-  "name": "deepseek-vscode-ext",
-  "displayName": "DeepChat Assistant",  
-  "description": "DeepSeek based VS Code Extension",
+  "name": "omnichat-ai-vscode-ext",
+  "displayName": "OmniChat AI",  
+  "description": "Include any LLM in your VSCode workflow. Search for code, documentation, and more using the power of LLMs.",
   "version": "0.0.1",
   "publisher": "vaidikv",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -15,8 +16,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "DeepSeek.start",
-        "title": "DeepSeek Start"
+        "command": "OmniChat.start",
+        "title": "OmniChat: Start"
+      },
+      {
+        "command": "OmniChat.setModel",
+        "title": "OmniChat: Set Model"
       }
     ]
   },
