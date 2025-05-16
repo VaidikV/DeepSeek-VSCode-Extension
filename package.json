@@ -1,8 +1,9 @@
 {
   "name": "deepseek-vscode-ext",
-  "displayName": "DeepSeek",
-  "description": "DeepSeek Assistant VS Code Extension",
+  "displayName": "DeepChat Assistant",  
+  "description": "DeepSeek based VS Code Extension",
   "version": "0.0.1",
+  "publisher": "vaidikv",
   "engines": {
     "vscode": "^1.96.0"
   },
